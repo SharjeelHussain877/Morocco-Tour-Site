@@ -1,3 +1,5 @@
+import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
 (function ($) {
   "use strict";
 
@@ -63,12 +65,12 @@
     return false;
   });
 
-  var swiper = new Swiper('.swiper', {
+  var swiper = new Swiper(".swiper", {
     slidesPerView: window.innerWidth <= 860 ? 1 : 3,
     // direction: getDirection(),
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
     },
     on: {
       resize: function () {
@@ -76,13 +78,7 @@
       },
     },
   });
-  
-//   function getDirection() {
-//     var windowWidth = window.innerWidth;
-//     var direction = window.innerWidth <= 760 ? 'vertical' : 'horizontal';
-//     return direction;
-//   }
-  
+
   // Testimonials carousel
   $(".testimonial-carousel").owlCarousel({
     autoplay: true,
@@ -105,3 +101,27 @@
     },
   });
 })(jQuery);
+
+var fullURL = window.location.href;
+// console.log("Full URL:", fullURL);
+var path = window.location.pathname;
+// console.log("Path:", path);
+
+var segments = path.split("/");
+// console.log("Segments:", segments);
+
+var secondSegment = segments[1];
+console.log("Second Segment:", secondSegment);
+if (
+  secondSegment == "about.html" ||
+  secondSegment == "team.html" ||
+  secondSegment == "testimonial.html"
+) {
+  location.href = "index.html";
+}
+if (
+  secondSegment == "service.html" ||
+  secondSegment == "destination.html"
+) {
+  location.href = "index.html";
+}
