@@ -102,16 +102,12 @@ import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
   });
 })(jQuery);
 
-var fullURL = window.location.href;
-// console.log("Full URL:", fullURL);
+
 var path = window.location.pathname;
-// console.log("Path:", path);
 
 var segments = path.split("/");
-// console.log("Segments:", segments);
 
 var secondSegment = segments[1];
-console.log("Second Segment:", secondSegment);
 if (
   secondSegment == "about.html" ||
   secondSegment == "team.html" ||
