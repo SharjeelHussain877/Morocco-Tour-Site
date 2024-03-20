@@ -23,21 +23,37 @@ const submitContactForm = async (event) => {
         message
     }
 
-    try {
-        const docRef = await addDoc(collection(db, "contact"), contactInput);
-        console.log("Document written with ID: ", docRef.id);
-        form.reset();
-        $("#spinner").removeClass("show");
-    } catch (e) {
-        console.error("Error adding document: ", e);
-        $("#spinner").removeClass("show");
-    }
+    if (navigator.onLine) {
+        try {
+            const docRef = await addDoc(collection(db, "contact"), contactInput);
+            console.log("Document written with ID: ", docRef.id);
+            form.reset();
+            $("#spinner").removeClass("show");
+            swal({
+                title: "Trip has been booked Successfully ⚡",
+                icon: "success",
+                button: "Okay!",
+              });
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            $("#spinner").removeClass("show");
+            swal({
+                title: "Please try again letter!",
+                text: "There is something error 🔴" ,
+                icon: "error",
+                button: "Okay!",
+              });
+        }
+      } else {
+        alert("Please check your internet connection!")
+          $("#spinner").removeClass("show");
+      }
 }
 
 const contactForm = document.getElementById("contact-form");
 contactForm?.addEventListener("submit", submitContactForm);
 
-
+  
 const submitBookingForm = async (event) => {
     event.preventDefault();
     $("#spinner").addClass("show");
@@ -66,9 +82,9 @@ const submitBookingForm = async (event) => {
         console.log("Document written with ID: ", docRef.id);
         form.reset();
         $("#spinner").removeClass("show");
-    } catch (e) {
-        console.error("Error adding document: ", e);
-        $("#spinner").removeClass("show");
+        } catch (e) {
+            console.error("Error adding document: ", e);
+            $("#spinner").removeClass("show");
     }
 }
 

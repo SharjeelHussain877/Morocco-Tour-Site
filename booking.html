@@ -7,9 +7,6 @@
     <meta content="" name="keywords" />
     <meta content="" name="description" />
 
-    <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon" />
-
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,8 +36,9 @@
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
-    <!-- Template Stylesheet -->
+    <!-- Stylesheet -->
     <link href="css/style.css" rel="stylesheet" />
+    <link href="css/booking.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -133,12 +131,12 @@
             <a href="index.html" class="nav-item nav-link">Home</a>
             <a href="about.html" class="nav-item nav-link">About</a>
             <!-- <a href="service.html" class="nav-item nav-link">Services</a> -->
-            <a href="package.html" class="nav-item nav-link">Packages</a> 
+            <a href="package.html" class="nav-item nav-link">Packages</a>
 
             <div class="nav-item dropdown">
               <a
                 href="#"
-                class="nav-link dropdown-toggle active"
+                class="nav-link dropdown-toggle"
                 data-bs-toggle="dropdown"
                 >Menus</a
               >
@@ -152,7 +150,7 @@
             </div>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
           </div>
-          <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+          <a href="" class="btn btn-primary rounded-pill py-2 px-4">Book now</a>
         </div>
       </nav>
 
@@ -164,7 +162,6 @@
               <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center">
                   <li class="breadcrumb-item"><a href="#">Home</a></li>
-                  <li class="breadcrumb-item"><a href="#">Pages</a></li>
                   <li
                     class="breadcrumb-item text-white active"
                     aria-current="page"
@@ -180,182 +177,239 @@
     </div>
     <!-- Navbar & Hero End -->
 
-    <!-- Process Start -->
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div class="text-center pb-4 wow fadeInUp" data-wow-delay="0.1s">
-          <h6 class="section-title bg-white text-center text-primary px-3">
-            Process
-          </h6>
-          <h1 class="mb-5">3 Easy Steps</h1>
+    <div class="container mt-5 form-container">
+      <form action="">
+        <div>
+          <input type="text" placeholder="full name" />
         </div>
-        <div class="row gy-5 gx-4 justify-content-center">
-          <div
-            class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
-            data-wow-delay="0.1s"
-          >
-            <div class="position-relative border border-primary pt-5 pb-4 px-4">
-              <div
-                class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
-                style="width: 100px; height: 100px"
-              >
-                <i class="fa fa-globe fa-3x text-white"></i>
-              </div>
-              <h5 class="mt-4">Choose A Destination</h5>
-              <hr class="w-25 mx-auto bg-primary mb-1" />
-              <hr class="w-50 mx-auto bg-primary mt-0" />
-              <p class="mb-0">
-                Tempor erat elitr rebum clita dolor diam ipsum sit diam amet
-                diam eos erat ipsum et lorem et sit sed stet lorem sit
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
-            data-wow-delay="0.3s"
-          >
-            <div class="position-relative border border-primary pt-5 pb-4 px-4">
-              <div
-                class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
-                style="width: 100px; height: 100px"
-              >
-                <i class="fa fa-dollar-sign fa-3x text-white"></i>
-              </div>
-              <h5 class="mt-4">Pay Online</h5>
-              <hr class="w-25 mx-auto bg-primary mb-1" />
-              <hr class="w-50 mx-auto bg-primary mt-0" />
-              <p class="mb-0">
-                Tempor erat elitr rebum clita dolor diam ipsum sit diam amet
-                diam eos erat ipsum et lorem et sit sed stet lorem sit
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp"
-            data-wow-delay="0.5s"
-          >
-            <div class="position-relative border border-primary pt-5 pb-4 px-4">
-              <div
-                class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
-                style="width: 100px; height: 100px"
-              >
-                <i class="fa fa-plane fa-3x text-white"></i>
-              </div>
-              <h5 class="mt-4">Fly Today</h5>
-              <hr class="w-25 mx-auto bg-primary mb-1" />
-              <hr class="w-50 mx-auto bg-primary mt-0" />
-              <p class="mb-0">
-                Tempor erat elitr rebum clita dolor diam ipsum sit diam amet
-                diam eos erat ipsum et lorem et sit sed stet lorem sit
-              </p>
-            </div>
+        <div>
+          <input type="number" placeholder="Phone number" />
+        </div>
+        <div>
+          <input type="email" placeholder="email" />
+        </div>
+        <div>
+          <input type="date" placeholder="arrival date" />
+        </div>
+        <div>
+          <label for="stay-duration">
+            What is the duration of your stay?
+          </label>
+          <div class="radio-container">
+            <input
+              type="radio"
+              id="stay-duration-3"
+              name="stay-duration"
+              value="3"
+            />
+            <label for="stay-duration-3" class="radio-label">3 days</label>
+            <input
+              type="radio"
+              id="stay-duration-5"
+              name="stay-duration"
+              value="5"
+            />
+            <label for="stay-duration-5" class="radio-label">5 days</label>
+            <input
+              type="radio"
+              id="stay-duration-7"
+              name="stay-duration"
+              value="7"
+            />
+            <label for="stay-duration-7" class="radio-label">7 days</label>
+            <input
+              type="radio"
+              id="stay-duration-9"
+              name="stay-duration"
+              value="9"
+            />
+            <label for="stay-duration-9" class="radio-label">9 days</label>
+            <input
+              type="radio"
+              id="stay-duration-other"
+              name="stay-duration"
+              value="other"
+            />
+            <label for="stay-duration-other" class="radio-label">other</label>
           </div>
         </div>
-      </div>
-    </div>
-    <!-- Process Start -->
+        <div>
+          <label for="crowd-size">
+            What does your crowd look like? (Number of people)
+          </label>
+          <div class="radio-container">
+            <input type="radio" id="crowd-size-1" name="crowd-size" value="1" />
+            <label for="crowd-size-1" class="radio-label">1</label>
+            <input type="radio" id="crowd-size-2" name="crowd-size" value="2" />
+            <label for="crowd-size-2" class="radio-label">2</label>
+            <input type="radio" id="crowd-size-3" name="crowd-size" value="3" />
+            <label for="crowd-size-3" class="radio-label">3</label>
+            <input
+              type="radio"
+              id="crowd-size-4-10"
+              name="crowd-size"
+              value="4 - 10"
+            />
+            <label for="crowd-size-4-10" class="radio-label">4 - 10</label>
+            <input
+              type="radio"
+              id="crowd-size-11-16"
+              name="crowd-size"
+              value="11 - 6"
+            />
+            <label for="crowd-size-11-16" class="radio-label">11 -16</label>
+            <input
+              type="radio"
+              id="crowd-size-big-group"
+              name="crowd-size"
+              value="big group"
+            />
+            <label for="crowd-size-big-group" class="radio-label"
+              >Big group</label
+            >
+          </div>
+        </div>
 
-    <!-- Booking Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-      <div class="container">
-        <div class="booking p-5">
-          <div class="row g-5 align-items-center">
-            <div class="col-md-6 text-white">
-              <h6 class="text-white text-uppercase">Booking</h6>
-              <h1 class="text-white mb-4">Online Booking</h1>
-              <p class="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.
-              </p>
-              <p class="mb-4">
-                Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit.
-                Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit,
-                sed stet lorem sit clita duo justo magna dolore erat amet
-              </p>
-              <a class="btn btn-outline-light py-3 px-5 mt-2" href=""
-                >Read More</a
-              >
-            </div>
-            <div class="col-md-6">
-              <h1 class="text-white mb-4">Book A Tour</h1>
-              <form>
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="text"
-                        class="form-control bg-transparent"
-                        id="name"
-                        placeholder="Your Name"
-                      />
-                      <label for="name">Your Name</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <input
-                        type="email"
-                        class="form-control bg-transparent"
-                        id="email"
-                        placeholder="Your Email"
-                      />
-                      <label for="email">Your Email</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div
-                      class="form-floating date"
-                      id="date3"
-                      data-target-input="nearest"
-                    >
-                      <input
-                        type="text"
-                        class="form-control bg-transparent datetimepicker-input"
-                        id="datetime"
-                        placeholder="Date & Time"
-                        data-target="#date3"
-                        data-toggle="datetimepicker"
-                      />
-                      <label for="datetime">Date & Time</label>
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-floating">
-                      <select class="form-select bg-transparent" id="select1">
-                        <option value="1">Destination 1</option>
-                        <option value="2">Destination 2</option>
-                        <option value="3">Destination 3</option>
-                      </select>
-                      <label for="select1">Destination</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control bg-transparent"
-                        placeholder="Special Request"
-                        id="message"
-                        style="height: 100px"
-                      ></textarea>
-                      <label for="message">Special Request</label>
-                    </div>
-                  </div>
-                  <div class="col-12">
-                    <button
-                      class="btn btn-outline-light w-100 py-3"
-                      type="submit"
-                    >
-                      Book Now
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
+
+
+
+
+
+        <div>
+          <label for="town">
+            What towns would you like to visit? 
+          </label>
+          <div class="checkbox-container">
+            <input type="radio" id="town-1" name="town" value="FES" />
+            <label for="town-1" class="radio-label">FES</label>
+            <input type="radio" id="town-2" name="town" value="Marrakech" />
+            <label for="town-2" class="radio-label">Marrakech</label>
+            <input type="radio" id="town-3" name="town" value="TANGIER" />
+            <label for="town-3" class="radio-label">TANGIER</label>
+            <input
+              type="radio"
+              id="town-4"
+              name="town"
+              value="CASABLANCA"
+            />
+            <label for="town-4" class="radio-label">CASABLANCA</label>
+            <input
+              type="radio"
+              id="town-5"
+              name="town"
+              value="AGAFAY DESERT"
+            />
+            <label for="town-5" class="radio-label">AGAFAY DESERT</label>
+            <input
+              type="radio"
+              id="town-6"
+              name="town"
+              value="ZAGOURA"
+            />
+            <label for="town-6" class="radio-label"
+              >ZAGOURA</label
+            >
+            <input
+              type="radio"
+              id="town-7"
+              name="town"
+              value="MERZOUGA"
+            />
+            <label for="town-7" class="radio-label"
+              >MERZOUGA</label
+            >
           </div>
         </div>
+       
+      </form>
+    </div>
+
+    <!-- <div class="container form-container">
+  <form action="">
+    <div>
+      <input type="text" placeholder="full name">
+    </div>
+    <div>
+      <input type="number" placeholder="Phone number">
+    </div>
+    <div>
+      <input type="email" placeholder="email">
+    </div>
+    <div>
+      <input type="date" placeholder="arrival date">
+    </div>
+    <div>
+      <label for="">
+        What is the duration of your stay?
+      </label>
+      <div>
+        <input type="radio" name="stay-duration"> 3 days
+        <input type="radio" name="stay-duration"> 5 days
+        <input type="radio" name="stay-duration"> 7 days
+        <input type="radio" name="stay-duration"> 9 days
+        <input type="radio" name="stay-duration"> other
       </div>
     </div>
-    <!-- Booking Start -->
+    <div>
+      <label for="">
+        What does your crowd look like? (Number of people)
+      </label>
+      <div>
+        <input type="radio" name="stay-duration"> 1
+        <input type="radio" name="stay-duration"> 2
+        <input type="radio" name="stay-duration"> 3
+        <input type="radio" name="stay-duration"> 4 - 10
+        <input type="radio" name="stay-duration"> 11 -16
+        <input type="radio" name="stay-duration"> Big group
+      </div>
+    </div>
+    <div>
+      <label for="">
+        What towns would you like to visit?
+      </label>
+      <div>
+        <input type="checkbox" name="stay-duration"> FES
+        <input type="checkbox" name="stay-duration"> Marrakech
+        <input type="checkbox" name="stay-duration"> TANGIER
+        <input type="checkbox" name="stay-duration"> CASABLANCA
+        <input type="checkbox" name="stay-duration"> AGAFAY DESERT
+        <input type="checkbox" name="stay-duration"> ZAGOURA
+        <input type="checkbox" name="stay-duration"> MERZOUGA
+      </div>
+    </div>
+    <div>
+      <label for="">
+        What activities are you Interested In?
+      </label>
+      <div>
+        <input type="checkbox" name="stay-duration"> ATV
+        <input type="checkbox" name="stay-duration"> Hot Air Balloon
+        <input type="checkbox" name="stay-duration"> Camel Desert Tour
+        <input type="checkbox" name="stay-duration"> Hike Tours
+        <input type="checkbox" name="stay-duration"> Riad In the Sahara
+        <input type="checkbox" name="stay-duration"> Nightlife
+      </div>
+    </div>
+    <div>
+      <label for="">
+        Preferred Contact Method:
+      </label>
+      <div>
+        <input type="checkbox" name="stay-duration"> Phone
+        <input type="checkbox" name="stay-duration"> WhatsApp
+        <input type="checkbox" name="stay-duration"> Email
+      </div>
+    </div>
+    <div>
+      <label for="">
+        Questions and Comments
+      </label>
+      <div>
+        <textarea name="questions and comments" id="" cols="30" rows="4"></textarea>
+      </div>
+    </div>
+  </form>
+</div>  -->
 
     <!-- Footer Start -->
     <div
@@ -467,23 +521,22 @@
       </div>
       <div class="container">
         <div class="copyright">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                  <!-- &copy; <a class="border-bottom" href="#">Awesome Morocco Tours</a>, Copyright by Awesome Morocco Tours company 2024-2025
+          <div class="row">
+            <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+              <!-- &copy; <a class="border-bottom" href="#">Awesome Morocco Tours</a>, Copyright by Awesome Morocco Tours company 2024-2025
                   <a class="border-bottom" href="#"
                     >Link</a -->
-                   &copy; Designed and develop by Sharjeel Husssain
-                  
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                  <div class="footer-menu">
-                    <!-- <a href="">Home</a> -->
-                    <!-- <a href="">Cookies</a>
+              &copy; Designed and develop by Sharjeel Husssain
+            </div>
+            <div class="col-md-6 text-center text-md-end">
+              <div class="footer-menu">
+                <!-- <a href="">Home</a> -->
+                <!-- <a href="">Cookies</a>
                     <a href="">Help</a>
                     <a href="">FQAs</a> -->
-                  </div>
-                </div>
               </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -504,8 +557,10 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js" type="module"></script>
+    <script src="js/booking.js" type="module"></script>
   </body>
 </html>

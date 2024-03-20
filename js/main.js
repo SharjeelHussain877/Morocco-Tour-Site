@@ -67,7 +67,6 @@ import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
 
   var swiper = new Swiper(".swiper", {
     slidesPerView: window.innerWidth <= 860 ? 1 : 3,
-    // direction: getDirection(),
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -102,7 +101,6 @@ import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
   });
 })(jQuery);
 
-
 var path = window.location.pathname;
 
 var segments = path.split("/");
@@ -115,9 +113,6 @@ if (
 ) {
   location.href = "index.html";
 }
-if (
-  secondSegment == "service.html" ||
-  secondSegment == "destination.html"
-) {
+if (secondSegment == "service.html" || secondSegment == "destination.html") {
   location.href = "index.html";
 }

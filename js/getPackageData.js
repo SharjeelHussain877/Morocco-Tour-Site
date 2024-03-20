@@ -1,7 +1,5 @@
 // import { db, collection, addDoc } from "./firebase.config.js";
 
-
-
 const obj = [
     {
         id: 1234,

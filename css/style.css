@@ -80,6 +80,14 @@
     rgba(0, 0, 0, 0.9) 100%
   );
 }
+.carousel {
+  height: 96vh;
+  width: 100%;
+}
+.carousel img {
+  height: 96vh;
+  object-fit: cover;
+}
 .carousel-text {
   position: absolute;
   top: 30%;
@@ -88,7 +96,8 @@
   z-index: 1;
 }
 .carousel-text > h1 {
-  font-size: 4.6em;
+  font-size: 4.3em;
+  line-height: 1em;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -97,16 +106,32 @@
   color: white;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-.carousel-text > button {
+.carousel-text > a {
   font-size: 1.4em;
   padding: 14px 40px;
   border: 1px solid var(--primary);
   background-color: transparent;
   transition: all 0.3s;
+  cursor: pointer;
 }
-.carousel-text > button:hover {
+.carousel-text > a:hover {
   color: #fff !important;
   background-color: var(--primary);
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1200px) {
+
+  .carousel-text > h1 {
+    font-size: 4em;
+    line-height: 0.9em;
+  }
+  .carousel-text > p {
+    font-size: 1em;
+  }
+  .carousel-text > button {
+    font-size: 1.2em;
+    padding: 10px 18px;
+  }
 }
 
 @media only screen and (min-width: 600px) and (max-width: 900px) {
@@ -128,16 +153,8 @@
   }
 }
 @media (max-width: 600px) {
-  .carousel {
-    height: 100vh;
-    width: 100%;
-  }
-  .carousel img {
-    height: 100vh;
-    object-fit: cover;
-  }
   .carousel-text {
-    top: 30%;
+    top: 22%;
     left: 3.8em;
     width: 70%;
   }
@@ -148,7 +165,7 @@
   .carousel-text > p {
     font-size: 1.2em;
   }
-  .carousel-text > button {
+  .carousel-text > a {
     font-size: 1.2em;
     padding: 10px 18px;
   }
