@@ -142,7 +142,7 @@
               >
               <div class="dropdown-menu m-0">
                 <a href="destination.html" class="dropdown-item">Destination</a>
-                <a href="booking.html" class="dropdown-item active">Booking</a>
+                <a href="index.html#contact" class="dropdown-item active">Contact</a>
                 <a href="team.html" class="dropdown-item">Travel Guides</a>
                 <a href="testimonial.html" class="dropdown-item">Testimonial</a>
                 <a href="404.html" class="dropdown-item">404 Page</a>
@@ -150,11 +150,11 @@
             </div>
             <a href="contact.html" class="nav-item nav-link">Contact</a>
           </div>
-          <a href="" class="btn btn-primary rounded-pill py-2 px-4">Book now</a>
+          <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Book now</a>
         </div>
       </nav>
 
-      <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+      <div class="container-fluid bg-primary py-5 mb-5 hero-header wow fadeInUp" data-wow-delay="0.3s">
         <div class="container py-5">
           <div class="row justify-content-center py-5">
             <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
@@ -176,8 +176,8 @@
       </div>
     </div>
     <!-- Navbar & Hero End -->
-    <div class="container form-container">
-      <div class="row mt-5" style="background-color: #F6F6F6;">
+    <div class="container form-container wow fadeInUp" data-wow-delay="0.3s" style="background-color: #F6F6F6;">
+      <div class="row pt-5">
         <div class="d-flex justify-content-center">
           <img src="https://png.pngitem.com/pimgs/s/178-1785110_book-now-png-book-now-png-hd-transparent.png" alt="" style="height: 200px;">
         </div>
@@ -185,7 +185,7 @@
           <img src="https://www.pngall.com/wp-content/uploads/8/Family-Travel.png" alt="" style="width:100%; height: fit-content;" class="d-md-none d-lg-block">
         </div>
         <div class="col-lg-7 col-md-12 sec">
-          <form>
+          <form id="book-tour">
             <div class="row">
               <div
                 class="col-xl-6 col-lg-12d-xl-flex flex-xl-column align-items-xl-center"
@@ -523,6 +523,9 @@
                 </div>
                 <div id="contact-set">Selected contact: </div>
               </div>
+              <div class="d-flex justify-content-end my-3">
+                <button type="submit" class="btn btn-primary rounded-pill py-2 px-4">Book now</button>
+              </div>
             </div>
           </form>
         </div>
@@ -618,8 +621,8 @@
 
     <!-- Footer Start -->
     <div
-      class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn"
-      data-wow-delay="0.1s"
+      class="container-fluid bg-dark text-light footer pt-5 wow fadeIn"
+      data-wow-delay="0.2s"
     >
       <div class="container py-5">
         <div class="row g-5">
@@ -764,7 +767,7 @@
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-    <!-- Template Javascript -->
+    <!--   Javascript -->
     <script src="js/main.js" type="module"></script>
     <script src="js/booking.js" type="module"></script>
   </body>
