@@ -8,7 +8,6 @@
   font-family: "Nunito", sans-serif;
   margin: 30px auto 0;
   display: block;
-  background: #fff;
 }
 h2 {
   text-align: center;
@@ -37,20 +36,20 @@ h2 small {
   position: relative;
   margin-bottom: 45px;
 }
-input {
+.group input {
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 300px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #757575;
 }
-input:focus {
+.group input:focus {
   outline: none;
 }
 
 /* LABEL ======================================= */
-label {
+.group label {
   color: #999;
   font-size: 18px;
   font-weight: normal;
@@ -150,5 +149,50 @@ input:focus ~ .highlight {
 }
 
 
+.radio-menus {
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
 
+.radio-menus label {
+  font-size: 18px;
+  margin-bottom: 5px;
+  display: block;
+}
 
+.radio-menus .radios > div {
+  margin-bottom: 5px;
+}
+
+.radio-menus .radios input[type="radio"],.radio-menus .radios input[type="checkbox"] {
+  display: none;
+}
+
+.radio-menus .radios input[type="radio"] + label, .radio-menus .radios input[type="checkbox"] + label {
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.radio-menus .radios input[type="radio"]:checked + label, .radio-menus .radios input[type="checkbox"]:checked + label {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.radio-menus .radios input[type="radio"]:focus + label, .radio-menus .radios input[type="checkbox"]:focus + label {
+  outline: 2px solid var(--primary);
+}
+
+@media (min-width: 1000px) {
+  .sec:nth-child(3) {
+    height: 80vh;
+    padding-top: 16px;
+    overflow: scroll;
+    background-color: transparent; 
+  }
+}
+.sec:nth-child(3)::-webkit-scrollbar-track {
+  background: none;
+}
