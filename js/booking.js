@@ -1,152 +1,150 @@
+import { submitForm } from "./addData.js";
+
 let bookingData = {
-    stayDuration: "",
-    person: "",
-    towns: {},
-    activities: {},
-    contacts: {},
-}
+  stayDuration: "",
+  person: "",
+  towns: {},
+  activities: {},
+  contacts: {},
+};
 
 const duration = document.querySelectorAll('input[name="stay-duration"]');
-const selectedDuration = document.getElementById('selected-duration');
+const selectedDuration = document.getElementById("selected-duration");
 
-duration.forEach(radio => {
-    radio.addEventListener('change', function() {
-        selectedDuration.textContent = `Selected duration: ${this.value}`;
-        bookingData.stayDuration = this.value;
-        console.log(bookingData)
-    });
+duration.forEach((radio) => {
+  radio.addEventListener("change", function () {
+    selectedDuration.textContent = `Selected duration: ${this.value}`;
+    bookingData.stayDuration = this.value;
+  });
 });
 
 const personCount = document.querySelectorAll('input[name="person-count"]');
-const selectedpersonCount = document.getElementById('person-count');
+const selectedpersonCount = document.getElementById("person-count");
 
-personCount.forEach(radio => {
-    radio.addEventListener('change', function() {
-        selectedpersonCount.textContent = `Selected person: ${this.value}`;
-        bookingData.person = this.value;
-        console.log(bookingData)
-    });
+personCount.forEach((radio) => {
+  radio.addEventListener("change", function () {
+    selectedpersonCount.textContent = `Selected person: ${this.value}`;
+    bookingData.person = this.value;
+  });
 });
 
 const town = document.querySelectorAll('input[name="town"]');
-const selectedTowns = document.getElementById('town-set');
+const selectedTowns = document.getElementById("town-set");
 
-town.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            bookingData.towns[this.value] = true;
-        } else {
-            delete bookingData.towns[this.value];
-        }
-        updateSelectedTowns();
-        console.log(bookingData)
-    });
+town.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      bookingData.towns[this.value] = true;
+    } else {
+      delete bookingData.towns[this.value];
+    }
+    updateSelectedTowns();
+  });
 });
 
 function updateSelectedTowns() {
-    const selectedTownsText = Object.keys(bookingData.towns).join(', ');
-    selectedTowns.textContent = `Selected Towns: ${selectedTownsText}`;
+  const selectedTownsText = Object.keys(bookingData.towns).join(", ");
+  selectedTowns.textContent = `Selected Towns: ${selectedTownsText}`;
 }
 
-
 const activity = document.querySelectorAll('input[name="activity"]');
-const selectedActivities = document.getElementById('activity-set');
+const selectedActivities = document.getElementById("activity-set");
 
-activity.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            bookingData.activities[this.value] = true;
-        } else {
-            delete bookingData.activities[this.value];
-        }
-        updateSelectedActivities();
-        console.log(bookingData)
-    });
+activity.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      bookingData.activities[this.value] = true;
+    } else {
+      delete bookingData.activities[this.value];
+    }
+    updateSelectedActivities();
+  });
 });
 
 function updateSelectedActivities() {
-    const selectedActivitiesText = Object.keys(bookingData.activities).join(', ');
-    selectedActivities.textContent = `Selected Activities: ${selectedActivitiesText}`;
+  const selectedActivitiesText = Object.keys(bookingData.activities).join(", ");
+  selectedActivities.textContent = `Selected Activities: ${selectedActivitiesText}`;
 }
 
 const contact = document.querySelectorAll('input[name="contact"]');
-const selectedContact = document.getElementById('contact-set');
+const selectedContact = document.getElementById("contact-set");
 
-contact.forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-        if (this.checked) {
-            bookingData.contacts[this.value] = true;
-        } else {
-            delete bookingData.contacts[this.value];
-        }
-        updateSelectedContact();
-        console.log(bookingData)
-    });
+contact.forEach((checkbox) => {
+  checkbox.addEventListener("change", function () {
+    if (this.checked) {
+      bookingData.contacts[this.value] = true;
+    } else {
+      delete bookingData.contacts[this.value];
+    }
+    updateSelectedContact();
+  });
 });
 
 function updateSelectedContact() {
-    const selectedContactText = Object.keys(bookingData.contacts).join(', ');
-    selectedContact.textContent = `Selected Contact: ${selectedContactText}`;
+  const selectedContactText = Object.keys(bookingData.contacts).join(", ");
+  selectedContact.textContent = `Selected Contact: ${selectedContactText}`;
 }
 
+const bookTour = document.getElementById("book-tour");
+bookTour.addEventListener("submit", submitBookingData);
 
+function submitBookingData(e) {
+  e.preventDefault();
+  const full_name = document.getElementById("full-name").value;
+  const email = document.getElementById("email").value;
+  const phone_number = document.getElementById("phone-number").value;
+  const arrival_date = document.getElementById("arrival-date").value;
 
+  if (
+    full_name == "" ||
+    email == "" ||
+    phone_number == "" ||
+    arrival_date == ""
+  ) {
+    swal({
+      title: "Please fill all the required fields!",
+      icon: "warning",
+      buttons: {
+        cancel: 'OK'
+      },
+    });
+  } else {
+    bookingData.full_name = full_name;
+    bookingData.email = email;
+    bookingData.phone_number = phone_number;
+    bookingData.arrival_date = arrival_date;
 
-// Data structure for inputs
-// const inputs = {
-//     stayDuration: {
-//       elements: document.querySelectorAll('input[name="stay-duration"]'),
-//       selected: document.getElementById('selected-duration'),
-//       values: '',
-//     },
-//     personCount: {
-//       elements: document.querySelectorAll('input[name="person-count"]'),
-//       selected: document.getElementById('person-count'),
-//       values: '',
-//     },
-//     town: {
-//       elements: document.querySelectorAll('input[name="town"]'),
-//       selected: document.getElementById('town-set'),
-//       values: {},
-//     },
-//     activity: {
-//       elements: document.querySelectorAll('input[name="activity"]'),
-//       selected: document.getElementById('activity-set'),
-//       values: {},
-//     },
-//     contact: {
-//       elements: document.querySelectorAll('input[name="contact"]'),
-//       selected: document.getElementById('contact-set'),
-//       values: {},
-//     },
-//   };
-  
-//   // Function to handle input selection
-//   function handleInputChange(input) {
-//     input.elements.forEach(checkbox => {
-//       checkbox.addEventListener('change', function() {
-//         if (this.checked) {
-//           input.values[this.value] = true;
-//         } else {
-//           delete input.values[this.value];
-//         }
-//         updateSelected(input);
-//       });
-//     });
-//   }
-  
-//   // Function to update selected input values
-//   function updateSelected(input) {
-//     const selectedText = Object.keys(input.values).join(', ');
-//     input.selected.textContent = `Selected ${input.name}: ${selectedText}`;
-//   }
-  
-//   // Refactoring input handling
-//   for (const key in inputs) {
-//     if (inputs.hasOwnProperty(key)) {
-//       const input = inputs[key];
-//       input.name = key.charAt(0).toUpperCase() + key.slice(1); // Capitalize input name
-//       handleInputChange(input);
-//     }
-//   }
-  
+    const missingOptions = [];
+
+    if (!bookingData.stayDuration) {
+      missingOptions.push("stay duration");
+    }
+
+    if (!bookingData.person) {
+      missingOptions.push("person count");
+    }
+
+    if (Object.keys(bookingData.towns).length === 0) {
+      missingOptions.push("towns");
+    }
+    if (Object.keys(bookingData.activities).length === 0) {
+      missingOptions.push("activity");
+    }
+    if (Object.keys(bookingData.contacts).length === 0) {
+      missingOptions.push("contact");
+    }
+
+    if (missingOptions.length > 0) {
+      swal({
+        title: `Please select ${missingOptions.join(', ')}!`,
+        icon: "warning",
+        buttons: {
+          cancel: 'OK'
+        },
+      });
+    } else {
+      submitForm(bookingData);
+      bookTour.reset()
+    }
+  }
+}
