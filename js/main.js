@@ -116,3 +116,60 @@ if (
 if (secondSegment == "service.html" || secondSegment == "destination.html") {
   location.href = "index.html";
 }
+
+// Destinations Array
+let arr = [
+  {
+    id: 1,
+    image:
+      "https://c0.wallpaperflare.com/preview/426/557/76/morocco-garden-blue-authentic.jpg",
+    destination: "Location 1",
+  },
+  {
+    id: 2,
+    image:
+      "https://w0.peakpx.com/wallpaper/357/296/HD-wallpaper-city-view-landscape-morocco-istanbul-night-house-island-islands.jpg",
+    destination: "Location 2",
+  },
+  {
+    id: 3,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1-M0XKZc_9GiYqrmxloZYCWtAPEDNF8LSMAj5lKi0-o9TprNcqMNwJrKuIuUmNhmkE2s&usqp=CAU",
+    destination: "Location 3",
+  },
+  {
+    id: 4,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOEhLWKe1fFdJbtRAgSwrnKSJULUfdKxwj-g&usqp=CAU",
+    destination: "Location 4",
+  },
+  {
+    id: 5,
+    image:
+      "https://i.pinimg.com/736x/e9/ce/e5/e9cee5ecee9c525cb534f7f0a75f6927.jpg",
+    destination: "Location 5",
+  },
+];
+
+// Get Destination Element
+let swiper = document.getElementById("swiper-main");
+
+// swiper.innerHTML = "";
+
+// arr.forEach(v => {
+//   swiper.innerHTML += `
+//   <div class="swiper-slide wow fadeInUp" data-wow-delay="0.1s">
+// <div class="content">
+//   <div class="swipe-vignette"></div>
+//   <div class="wrapper">
+//     <p>Lorem</p>
+//     <button class="btn-default">Learn more</button>
+//   </div>
+//   <img
+//     src="${v.image}"
+//     alt="${v.destination}-image"
+//   />
+// </div>
+// </div>
+//   `;
+// });

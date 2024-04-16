@@ -81,11 +81,11 @@
   );
 }
 .carousel {
-  height: 96vh;
+  height: 100vh;
   width: 100%;
 }
 .carousel img {
-  height: 96vh;
+  height: 100vh;
   object-fit: cover;
 }
 .carousel-text {
