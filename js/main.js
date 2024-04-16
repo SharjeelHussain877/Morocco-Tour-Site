@@ -65,15 +65,19 @@ import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs
     return false;
   });
 
+  let direction = window.innerWidth <= 860 ? 'vertical' : 'horizontal';
+
+
   var swiper = new Swiper(".swiper", {
-    slidesPerView: window.innerWidth <= 860 ? 1 : 3,
+    slidesPerView: window.innerWidth <= 860 ? 1 : 4,
+    loop: true,
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
     },
     on: {
       resize: function () {
-        this.changeDirection(getDirection());
+        this.changeDirection(direction);
       },
     },
   });
@@ -151,25 +155,3 @@ let arr = [
   },
 ];
 
-// Get Destination Element
-let swiper = document.getElementById("swiper-main");
-
-// swiper.innerHTML = "";
-
-// arr.forEach(v => {
-//   swiper.innerHTML += `
-//   <div class="swiper-slide wow fadeInUp" data-wow-delay="0.1s">
-// <div class="content">
-//   <div class="swipe-vignette"></div>
-//   <div class="wrapper">
-//     <p>Lorem</p>
-//     <button class="btn-default">Learn more</button>
-//   </div>
-//   <img
-//     src="${v.image}"
-//     alt="${v.destination}-image"
-//   />
-// </div>
-// </div>
-//   `;
-// });
