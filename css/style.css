@@ -192,6 +192,7 @@
   position: relative;
   height: 350px;
   max-width: 300px;
+  width: 100%;
   max-width: auto;
 }
 
