@@ -79,11 +79,11 @@
     rgba(0, 0, 0, 0.342) 100%
   );
 }
-.carousel {
+.carousel-home {
   height: 100vh;
   width: 100%;
 }
-.carousel img {
+.carousel-home img {
   height: 100vh;
   object-fit: cover;
 }
@@ -312,6 +312,8 @@ textarea::-webkit-scrollbar-thumb:hover {
 .btn.btn-primary,
 .btn.btn-secondary {
   color: #ffffff;
+  background-color: var(--primary);
+  border: none;
 }
 
 .btn-square {
@@ -894,4 +896,30 @@ color:var(--primary);
 }
 .clients .silde img {
   height: 12rem;
+}
+
+.card {
+  border: none;
+  background-color: #fff;
+}
+.card > *:first-child {
+  border: none;
+  background-color: #fff;
+}
+
+.card > *:first-child > *  {
+  margin-left: -20px;
+}
+.card > *:first-child > * > * > * {
+  font-size: clamp(1rem, 1.3rem, 3rem);
+  color: var(--dark);
+}
+.card > *:first-child > * > *:hover > * {
+  transition: all .2s;
+  font-size: clamp(1rem, 1.3rem, 3rem);
+  color: var(--primary);
+}
+
+.card > *:last-child > *  {
+  margin-left: 20px;
 }
