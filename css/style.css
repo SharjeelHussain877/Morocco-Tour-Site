@@ -189,10 +189,8 @@
 }
 
 .swiper .swiper-slide .content {
-  height: 100%;
-  width: 100%;
   position: relative;
-  height: 400px;
+  height: 350px;
   max-width: 300px;
   max-width: auto;
 }
